@@ -1,22 +1,28 @@
-import logo from './logo.svg';
+import Connexion from './Connexion';
 import './App.css';
+import { useParams } from 'react-router-dom'
+import Message from './Message';
+import Formulaire from './Formulaire';
+import { useState } from 'react';
+
+
+
+
+
 
 function App() {
+  const { pseudo } = useParams();
+  const [psdo, setPsdo] = useState();
+  const [message, setMessage] = useState();
+  const [users, setUsers] = useState([]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Message />
+
+        <Formulaire />
+
       </header>
     </div>
   );
